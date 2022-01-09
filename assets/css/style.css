@@ -1,0 +1,16 @@
+.custom-jumbotron{
+    background: rgb(52,159,189);
+    background: linear-gradient(90deg, rgba(52,159,189,1) 0%, rgba(33,30,148,1) 100%);
+}
+
+.gray{
+    background-color: lightslategray;
+}
+
+.custom-blue{
+    background-color: rgb(48, 48, 199);
+}
+
+.custom-weather-cards div{
+    background-color: rgb(48, 48, 199);
+}
