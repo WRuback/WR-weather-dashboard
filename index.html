@@ -21,19 +21,20 @@
                 <form class="w-100">
                     <div class="form-group">
                         <label for="search" class="h3">Enter City Here</label>
-                        <input type="text" class="w-100" placeholder="Ex: Orlando" id="search">
+                        <input type="text" class="w-100" placeholder="Ex: Orlando" id="search-city">
                     </div>
-                    <button type="submit" class="btn w-100 text-white custom-blue">Submit</button>
+                    <button type="submit" class="btn w-100 text-white custom-blue" id="submit-city">Submit</button>
                 </form>
+                <p class="text-danger text-center hide" id="error-display">Cannot find City.</p>
                 <div class="border-top border-secondary mt-2 mb-1"></div>
                 <div>
-                    <button type="submit" class="btn btn-light w-100 my-1 text-white gray">Submit</button>
-                    <button type="submit" class="btn btn-light w-100 my-1 text-white gray">Submit</button>
+                    <button type="submit" class="btn btn-light w-100 my-1 text-white gray city-button">Submit</button>
+                    <button type="submit" class="btn btn-light w-100 my-1 text-white gray city-button">Submit</button>
                 </div>
             </div>
             <div class="col-12 col-md-9 row mx-auto">
                 <div class="col-12 card">
-                    <div class="card-body">
+                    <div class="card-body" id="city-main-display">
                         <h3>
                             Orlando
                             <img src="http://openweathermap.org/img/wn/10d.png">
@@ -45,7 +46,7 @@
                     </div>
                 </div>
                 <h4 class="col-12 mt-3 px-0">5-Day Forecast:</h4>
-                <div class="col-12 row m-0 p-0 text-white custom-weather-cards">
+                <div class="col-12 row m-0 p-0 text-white custom-weather-cards" id="city-forecast">
                     <div class="col-12 col-md-3 col-lg mt-3 mr-md-3">
                         <h5>3/31/2021</h5>
                         <img src="http://openweathermap.org/img/wn/10d.png">

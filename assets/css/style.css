@@ -14,3 +14,7 @@
 .custom-weather-cards div{
     background-color: rgb(48, 48, 199);
 }
+
+.hide{
+    display: none;
+}
