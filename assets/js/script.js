@@ -80,6 +80,23 @@ function buildDashboard(city,cityWeather){
         uvDisplay.addClass("text-white severe");
     }
     cityMainDisplay.children().eq(4).append(uvDisplay);
+
+
+    for(let i=0; i<5; i++){
+        let forcastCard = cityForecasts.children().eq(i);
+        let dayData = cityWeather.daily[i];
+        forcastCard.empty();
+
+        forcastCard.append(`<h5>${moment(dayData.dt,"X").format(" MM/DD/YYYY")}</h5>`).addClass("pt-1");
+        
+        let weatherIcon = $("<img>");
+        weatherIcon.attr("src",`http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`);
+        forcastCard.append(weatherIcon);
+        
+        forcastCard.append(`<p>Temp: ${dayData.temp.day}°F</p>`);
+        forcastCard.append(`<p>Wind: ${dayData.wind_speed}MPH</p>`);
+        forcastCard.append(`<p>Humidity: ${dayData.humidity}%</p>`);
+    }
 }
 
 function displayError(errorMessage) {
