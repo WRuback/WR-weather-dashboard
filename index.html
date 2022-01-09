@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,11 +9,86 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>Weather Dashboard</title>
 </head>
+
 <body>
-    
+    <header class="jumbotron p-3">
+        <h1 class="text-center">Weather Dashboard</h1>
+    </header>
+
+    <main class="container-fluid">
+        <div class="row px-0 mx-auto">
+            <div class="col-12 col-md-3 d-flex flex-column align-items-stretch mb-4">
+                <form class="w-100">
+                    <div class="form-group">
+                        <label for="search" class="h3">Enter City Here</label>
+                        <input type="text" class="w-100" placeholder="Orlando" id="search">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </form>
+                <div class="border-top border-secondary mt-2 mb-1"></div>
+                <div>
+                    <button type="submit" class="btn btn-light w-100 my-1">Submit</button>
+                    <button type="submit" class="btn btn-light w-100 my-1">Submit</button>
+                </div>
+            </div>
+            <div class="col-12 col-md-9 row mx-auto">
+                <div class="col-12 card">
+                    <div class="card-body">
+                        <h3>
+                            Orlando
+                            <img src="http://openweathermap.org/img/wn/10d.png">
+                        </h3>
+                        <p>Temp: 74.01 F</p>
+                        <p>Wind: 6.67 MPH</p>
+                        <p>Humidity: 46 %</p>
+                        <p>UV Index:<span class="px-2 py-1 mx-2 rounded bg-success text-white">0.47</span></p>
+                    </div>
+                </div>
+                <h4 class="col-12 mt-3 px-0">5-Day Forecast:</h4>
+                <div class="col-12 row justify-content-between m-0 mt-1 p-0 text-white">
+                    <div class="col-12 col-md bg-primary mr-md-3">
+                        <h5>3/31/2021</h5>
+                        <img src="http://openweathermap.org/img/wn/10d.png">
+                        <p>Temp: 73.72 F</p>
+                        <p>Wind: 6.67 MPH</p>
+                        <p>Humidity: 46 %</p>
+                    </div>
+                    <div class="col-12 col-md bg-primary mt-3 mt-md-0 mr-md-3">
+                        <h5>3/31/2021</h5>
+                        <img src="http://openweathermap.org/img/wn/10d.png">
+                        <p>Temp: 73.72 F</p>
+                        <p>Wind: 6.67 MPH</p>
+                        <p>Humidity: 46 %</p>
+                    </div>
+                    <div class="col-12 col-md bg-primary mt-3 mt-md-0 mr-md-3">
+                        <h5>3/31/2021</h5>
+                        <img src="http://openweathermap.org/img/wn/10d.png">
+                        <p>Temp: 73.72 F</p>
+                        <p>Wind: 6.67 MPH</p>
+                        <p>Humidity: 46 %</p>
+                    </div>
+                    <div class="col-12 col-md bg-primary mt-3 mt-md-0 mr-md-3">
+                        <h5>3/31/2021</h5>
+                        <img src="http://openweathermap.org/img/wn/10d.png">
+                        <p>Temp: 73.72 F</p>
+                        <p>Wind: 6.67 MPH</p>
+                        <p>Humidity: 46 %</p>
+                    </div>
+                    <div class="col-12 col-md bg-primary mt-3 mt-md-0">
+                        <h5>3/31/2021</h5>
+                        <img src="http://openweathermap.org/img/wn/10d.png">
+                        <p>Temp: 73.72 F</p>
+                        <p>Wind: 6.67 MPH</p>
+                        <p>Humidity: 46 %</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>
