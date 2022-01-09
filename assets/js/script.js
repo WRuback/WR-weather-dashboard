@@ -1,13 +1,26 @@
 // Grabbing page elements.
 var searchBar = $("#search-city");
 var submitButton = $('#submit-city');
+var prevButtonDisplay = $('#prev-cities');
+var dashBoard = $('#dashboard');
 var cityMainDisplay = $('#city-main-display');
 var cityForecasts = $('#city-forecast');
 var errorDisplay = $('#error-display');
 
+var prevCities = "";
+
 function init() {
     submitButton.on("click", onSubmit);
-
+    if(localStorage.getItem("prevCities") !== null){
+        prevCities = JSON.parse(localStorage.getItem("prevCities"));
+        for (let i = 0; i < prevCities.length; i++) {
+            addPrevSearchButton(prevCities[i]);
+            
+        }
+    }
+    else{
+        prevCities = [];
+    }
 }
 
 async function fetchCityLocation(city) {
@@ -51,10 +64,28 @@ async function onSubmit(event) {
     }
     console.log(location);
     console.log(cityWeatherData);
+    
+    let length = prevCities.length;
+    let remove = "";
+    for(let i=0; i<length; i++){
+        if(location[2] === prevCities[i][2])
+        {
+            remove = i;
+        }
+    }
+    if(remove !== ""){
+        prevCities.pop(remove);
+        prevButtonDisplay.children().eq(remove).remove();
+    }
+    
+    prevCities.push(location);
+    addPrevSearchButton(location);
+    localStorage.setItem("prevCities", JSON.stringify(prevCities));
     buildDashboard(location,cityWeatherData);
 }
 
 function buildDashboard(city,cityWeather){
+    dashBoard.removeClass("hide");
     cityMainDisplay.empty();
     
     cityMainDisplay.append(`<h3>${city[2] + moment(cityWeather.current.dt,"X").format(" (MM/DD/YYYY)")}</h3>`);
@@ -97,6 +128,17 @@ function buildDashboard(city,cityWeather){
         forcastCard.append(`<p>Wind: ${dayData.wind_speed}MPH</p>`);
         forcastCard.append(`<p>Humidity: ${dayData.humidity}%</p>`);
     }
+}
+
+function addPrevSearchButton(cityInfo){
+    let newButton = $("<button>");
+    newButton.attr("type","button");
+    newButton.attr("lat",cityInfo[0]);
+    newButton.attr("lon",cityInfo[1]);
+    newButton.attr("name",cityInfo[2]);
+    newButton.addClass("btn btn-light w-100 my-1 text-white gray city-button");
+    newButton.text(cityInfo[2]);
+    prevButtonDisplay.append(newButton);
 }
 
 function displayError(errorMessage) {
