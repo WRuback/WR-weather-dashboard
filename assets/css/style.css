@@ -9,6 +9,18 @@
 
 .custom-blue{
     background-color: rgb(48, 48, 199);
+    transition: 0.2s;
+}
+.custom-blue:hover{
+    background-color: rgb(107, 107, 250);
+}
+
+.custom-orange{
+    background-color: rgb(219, 138, 16);
+    transition: 0.2s;
+}
+.custom-orange:hover{
+    background-color: rgb(253, 197, 112);
 }
 
 .custom-weather-cards div{
