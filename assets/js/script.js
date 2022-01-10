@@ -79,16 +79,12 @@ async function onSearch(event) {
     else {
         return;
     }
+
     if (cityWeatherData === null) {
         return;
     }
-    // Add the city and cooridnates to local storage (After removing duplicates), and give it a button. 
-    removeDups(location);
-    prevCities.push(location);
-    addPrevSearchButton(location);
-    localStorage.setItem("prevCities", JSON.stringify(prevCities));
-    // Builds the dashboard with the data.
-    buildDashboard(location, cityWeatherData);
+    // Creates buttons and dashboard.
+    enterWeatherData(location, cityWeatherData);
     // Clear the search bar.
     searchBar.val("");
 }
@@ -105,15 +101,19 @@ async function onPrevButton(event) {
             return;
         }
 
-        // Add the city and cooridnates to local storage (After removing duplicates), and give it a button. 
-        removeDups(location);
-        prevCities.push(location);
-        addPrevSearchButton(location);
-        localStorage.setItem("prevCities", JSON.stringify(prevCities));
-        // Builds the dashboard with the data.
-        buildDashboard(location, cityWeatherData);
+        enterWeatherData(location, cityWeatherData);
         prevButtonRunning = false;
     }
+}
+// Creates the buttons and dashboard with the location and weather data.
+function enterWeatherData(location, cityWeatherData) {
+    // Add the city and cooridnates to local storage (After removing duplicates), and give it a button. 
+    removeDups(location);
+    prevCities.push(location);
+    addPrevSearchButton(location);
+    localStorage.setItem("prevCities", JSON.stringify(prevCities));
+    // Builds the dashboard with the data.
+    buildDashboard(location, cityWeatherData);
 }
 // Builds the dashboard, using the weather data.
 function buildDashboard(city, cityWeather) {
@@ -152,7 +152,7 @@ function buildDashboard(city, cityWeather) {
     // Loops through the children of the forcast display, and adds the data and images accordingly.
     for (let i = 0; i < 5; i++) {
         let forcastCard = cityForecasts.children().eq(i);
-        let dayData = cityWeather.daily[i];
+        let dayData = cityWeather.daily[i+1];
         forcastCard.empty();
 
         forcastCard.append(`<h5>${moment(dayData.dt, "X").format(" MM/DD/YYYY")}</h5>`).addClass("pt-1");
