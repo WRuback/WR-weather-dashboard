@@ -104,7 +104,7 @@ function buildDashboard(city, cityWeather) {
     cityMainDisplay.append(`<p>UV Index: </p>`);
 
     let weatherIcon = $("<img>");
-    weatherIcon.attr("src", `http://openweathermap.org/img/wn/${cityWeather.current.weather[0].icon}.png`);
+    weatherIcon.attr("src", `https://openweathermap.org/img/wn/${cityWeather.current.weather[0].icon}.png`);
     cityMainDisplay.children().eq(0).append(weatherIcon);
 
     let uvDisplay = $("<span>").addClass("px-2 py-1 mx-2 rounded");
@@ -130,7 +130,7 @@ function buildDashboard(city, cityWeather) {
         forcastCard.append(`<h5>${moment(dayData.dt, "X").format(" MM/DD/YYYY")}</h5>`).addClass("pt-1");
 
         let weatherIcon = $("<img>");
-        weatherIcon.attr("src", `http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`);
+        weatherIcon.attr("src", `https://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`);
         forcastCard.append(weatherIcon);
 
         forcastCard.append(`<p>Temp: ${dayData.temp.day}°F</p>`);
