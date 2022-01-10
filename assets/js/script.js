@@ -29,7 +29,7 @@ function init() {
 }
 
 async function fetchCityLocation(city) {
-    let url = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=81997842e5cf7a516e903b9b2c85145e`;
+    let url = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=81997842e5cf7a516e903b9b2c85145e`;
     let output = await fetch(url)
         .then(function (response) {
             return response.json();
