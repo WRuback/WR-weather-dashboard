@@ -61,7 +61,7 @@ async function fetchCityWeather(latLon) {
             return data;
         })
         .catch(function (error) {
-            // Runs if it was not able to find a city.
+            // Runs if it was not able to pull the weather data.
             displayError("Weather data could not be pulled at this time.");
             return null;
         });
@@ -119,7 +119,7 @@ function enterWeatherData(location, cityWeatherData) {
 function buildDashboard(city, cityWeather) {
     // Shows the dashboard if it was hidden.
     dashBoard.removeClass("hide");
-    // empties the main display of all it's contents.
+    // Empties the main display of all it's contents.
     cityMainDisplay.empty();
 
     // Appends all base elements, in order, using regular expressions to put in data.
@@ -134,7 +134,7 @@ function buildDashboard(city, cityWeather) {
     weatherIcon.attr("src", `https://openweathermap.org/img/wn/${cityWeather.current.weather[0].icon}.png`);
     cityMainDisplay.children().eq(0).append(weatherIcon);
 
-    // Adds the ux index, giving it a speific class depending on how severe it is. Appends to the last child.
+    // Adds the ux index, giving it a specific class depending on how severe it is. Appends to the last child.
     let uvDisplay = $("<span>").addClass("px-2 py-1 mx-2 rounded");
     let uvRating = cityWeather.current.uvi;
     uvDisplay.text(uvRating);
@@ -182,7 +182,6 @@ function addPrevSearchButton(cityInfo) {
 // Removes duplicate cities from the previous city list, and the button created to represent it.
 function removeDups(location) {
     let length = prevCities.length;
-    let remove = "";
     for (let i = 0; i < length; i++) {
         if (location[2] === prevCities[i][2]) {
             prevCities.splice(i, 1);
