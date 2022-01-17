@@ -8,13 +8,13 @@ A project for my bootcamp to create a weather dashboard that uses data from the 
 
 The forecast includes the temperature, wind speed, and humidity, along with the current UV index, and an icon showing the cloud pattern and if it is raining.
 
-# Extensions and API's Used
+# Used Tech
 
-* [Open Weather One Call API](https://openweathermap.org/api/one-call-api)
-* [Open Weather Geocoding API](https://openweathermap.org/api/geocoding-api)
-* Bootstrap
-* JQuery
-* [Moment.Js](https://momentjs.com/)
+- [Open Weather One Call API](https://openweathermap.org/api/one-call-api)
+- [Open Weather Geocoding API](https://openweathermap.org/api/geocoding-api)
+- Bootstrap
+- JQuery
+- [Moment.Js](https://momentjs.com/)
 
 # Webpage Link
 
@@ -27,3 +27,31 @@ The forecast includes the temperature, wind speed, and humidity, along with the 
 ![screenshot2](README-assets/Screenshot2.png)
 
 ![screenshot3](README-assets/Screenshot3.png)
+
+## Contributors
+
+ - William Ruback - wrubackdev@gmail.com
+
+## License
+
+>MIT License
+>
+>Copyright (c) 2022 William Ruback
+>
+>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+>
+>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+>
+>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
